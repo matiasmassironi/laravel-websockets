@@ -25,7 +25,7 @@ class HealthHandler implements HttpServerInterface
             json_encode(['ok' => true])
         );
 
-        tap($connection)->send(\GuzzleHttp\Psr7\str($response))->close();
+        tap($connection)->send(\GuzzleHttp\Psr7\Message::toString($response))->close();
     }
 
     /**
